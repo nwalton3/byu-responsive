@@ -1,0 +1,393 @@
+/*** Header, logo, MyBYU ***/
+
+
+
+// Mobile
+
+@mixin header-mobile() {
+
+#main-header {
+  min-width:180px;
+  position:relative;
+  background-color: $blue0;
+  height:81px; }
+
+#header-top {
+  position: relative;
+  z-index: 101; }
+
+#logo {
+  padding:.35em 5%;
+  height:2em;
+  padding-left:5%;
+  border-bottom:1px solid $blue3;
+  background-color:$blue2;
+  .svg & {
+    background: transparent url('../img/bg.svg') top left no-repeat;
+    @include background-size(cover); }
+  h1 {
+    margin:0;
+    margin-left:-7px;
+    text-indent: -999em;
+    overflow: hidden;
+    background: transparent url('../img/logo-sm.png') 0px 0px no-repeat;
+    .svg & {
+      background-image: url('../img/logo-sm.svg') } }
+    a {
+      display:block;
+      margin-right:50%; } }
+
+a.mybyu, .open #search-button {
+  position:relative;
+  float:right;
+  margin-right:5%;
+  margin-top:.4em;
+  right:-.35em;
+  background-color:$blue5;
+  color:#fff;
+  padding:.35em 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius:1em;
+  border:none;
+  &:hover {
+    cursor:pointer; } }
+
+#search-container {
+  width:2.5em;
+  height:2.5em;
+  position:absolute;
+  right:5%;
+  top:0;
+  z-index: 500;
+  .search {
+    @include ir();
+    line-height:2.5em;
+    background:transparent url('../img/search.png') .45em center no-repeat;
+    .svg & {
+      background-image: url('../img/search-lg.svg') } } }
+
+#searchForm {
+  clear: left;
+  padding:0;
+  border-top:1px solid transparent;
+  margin-top:1em;  
+  margin:1em 5% 4em;
+  #q {
+    font-size:1.25em;
+    padding:.5em 1em; } }
+
+#search-button {
+  padding:.35em 1.5em;
+  margin:.25em 0;
+  background-color:$blue4;
+  color:#fff;
+  border:1px solid $blue5; }
+    
+}
+
+
+
+
+// Media queries enabled
+
+@mixin header-1() {
+  
+#searchForm {
+  display: none;
+  #search-container.open & { // Open search container
+    display:block;
+    position: absolute;
+    right:0;
+    top:1em;
+    background-color:$blue6;
+    @include border-radius(1em);
+    @include box-shadow(0 0 20px #000);
+    border: 1px solid $blue3;
+    padding:.5em .75em;
+    #search {
+      padding: .3em 1em .35em;
+      width:12em;
+      border:none;
+      position: relative;
+      z-index: 2;
+      background-color: $grayE;
+      @include border-radius(1em);
+      &:focus {
+        background-color: #fff;
+        outline: none; } } } }
+
+#content #searchForm {
+  display: block; }
+  
+}
+
+
+
+
+
+
+
+// 300
+
+@mixin header-300() {
+
+#logo {
+  //@include byu-gradient(100px 20px);
+  border-bottom-color: $blue4;
+  h1 {
+    background-image: url('../img/logo.png');
+    .svg & {
+      background-image: url('../img/logo.svg'); }
+    //background-position: 0px 0px;
+    width:90px; } }
+
+a.mybyu, .open #search-button {
+  color: white;
+  display: block;
+  @include background-image(linear-gradient($blue5, $blue3));
+  @include border-radius(14px);
+  @include box-shadow(0 1px 0 rgba(255, 255, 255, 0.25) inset,0 1px 8px rgba(0, 0, 0, 0.2));
+  padding:.35em 1.75em;
+  //padding: 4px 28px;
+  //float: left;
+  //margin-right: 12px;
+  text-decoration: none;
+  font-weight: bold; }
+
+#search-container {
+  background-color: transparent;
+  border:none;
+  padding:0;
+  height: auto;
+  a.search {
+    background: transparent url('../img/search-lg.png') center center no-repeat;
+    .svg & {
+      background-image: url('../img/search-lg.svg'); } } }
+
+}
+
+
+
+
+
+
+
+
+// 450 px
+
+@mixin header-450() {
+
+#logo {
+  @include byu-gradient(140px 20px);
+  h1 {
+    width:auto; } }
+
+}
+
+
+
+
+
+
+
+// 600 px
+
+@mixin header-600() {
+
+#main-header {
+  height: 99px; }
+  
+#logo {
+  @include byu-gradient(160px 30px);
+  padding:.9em 5%; }
+
+a.mybyu {
+  position: absolute;
+  top:.6em;
+  right:3em; }
+
+#search-container {
+  top:.65em;
+  &.open #searchForm {
+    top:-1em;
+    right:2.5em;
+    width:20em;
+    #search-button {
+      position: absolute;
+      top:2px; } } }
+  
+}
+
+
+
+
+
+
+
+// 700 px
+
+@mixin header-700() {
+
+#main-header {
+  border-bottom: 1px solid $blue4;
+  @include box-shadow(0 0 10px rgba(0,0,0,.5)); }
+
+}
+
+
+
+
+
+
+
+
+// 800 px
+
+@mixin header-800() {
+
+#main-header {
+  height: 129px; }
+
+#logo {
+  padding:0;
+  height:87px;
+  h1 {
+    margin:0 auto;
+    background-position: .7em 5px;
+    height:80px;
+    background-image:url('../img/logo-lg.png');
+    .svg & {
+      background-image:url('../img/logo-lg.svg'); }
+    a {
+      height: 87px;
+      width: 350px; } } }
+
+a.mybyu {
+  margin: 0;
+  margin-right: 16em;
+  right:5%;
+  top:.75em;
+  padding-top:.3em; }
+
+#search-container {
+  color: white;
+  display: block;
+  @include background-image(linear-gradient($blue5, $blue3));
+  @include border-radius(14px);
+  @include box-shadow(0 1px 0 rgba(255, 255, 255, 0.25) inset,0 1px 8px rgba(0, 0, 0, 0.2));
+  width:15em;
+  padding-top: 0;
+  margin-top:0;
+  font-size: 15px;
+  top:.75em;
+  form {
+    margin-top:0; }
+  .search {
+    display: none; }
+  #search {
+    padding: .3em 1em .35em;
+    width:12em;
+    border:none;
+    position: relative;
+    z-index: 2;
+    background-color: $grayE;
+    @include border-radius(1em);
+    &:focus {
+      background-color: #fff;
+      outline: none; } }
+  #search-button {
+    position: absolute;
+    background:transparent url('../img/search-button.png') top right no-repeat;
+    border: none;
+    margin: 0;
+    width:4em;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    text-indent: -999em; } }
+
+#searchForm, #search-container.open #searchForm {
+  padding:0;
+  width: auto;
+  display: block;
+  margin:0;
+  position: relative;
+  top:-1px;
+  right:0;
+  background-color: transparent; }
+
+}
+
+
+
+
+
+
+
+
+// 940 px
+
+@mixin header-940() {
+
+#logo {
+  h1 {
+    background-position: .6em 5px;
+    width:940px; } }
+}
+
+
+
+
+
+
+
+// 1000 px
+
+@mixin header-1000() {
+
+#logo {
+  @include byu-gradient(250px 50px, 400px 130px); }
+
+#search-container, a.mybyu {
+  right:50%;
+  margin-right:-460px; }
+  
+a.mybyu {
+  margin-right: -220px; }
+
+}
+
+
+
+// 1040 px
+
+@mixin header-1040() {
+
+}
+
+
+
+// 1300 px
+
+@mixin header-1300() {
+
+#logo h1 {
+  width:1120px; } 
+
+
+#search-container, a.mybyu {
+  margin-right:-530px; }
+  
+a.mybyu {
+  margin-right: -290px; }
+  
+}
+
+
+
+// 1560 px
+
+@mixin header-1560() {
+  
+}

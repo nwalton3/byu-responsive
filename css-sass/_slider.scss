@@ -1,0 +1,508 @@
+
+/*** Footer ***/
+
+
+
+// Mobile
+
+@mixin slider-mobile() {
+
+.no-flexslider div.flexslider { 
+  padding-bottom: 0;
+  margin-bottom: 0;
+  .slides > li {
+    display: block; } }
+
+.flexslider {
+  border-top:none; 
+  padding-bottom:1em;
+  padding-top:1em;
+  li {
+    > a {
+      display:block;
+      margin:0; } }
+  a.more {
+    display:block; }
+  .slides li {
+    width:100%;
+    overflow:hidden;
+    a.wide {
+      overflow:hidden;
+      img {
+        width:134.477825%;
+        max-width:999em; } } } }
+
+.flex-control-nav, .flex-control-nav img {
+    display:none; }
+        
+.flexslider {
+  list-style: none; 
+  padding:0;
+  margin:0; }
+
+.no-js .feature-description {
+  background-color: transparent;
+  @include box-shadow(none);
+  position: relative;
+  top:0;
+  left:0;
+  width:auto;
+  padding:0;
+  margin:0;
+  height:auto;
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold; } }
+
+}
+
+
+
+
+// Media queries enabled
+
+@mixin slider-1() {
+
+  $touchButtonSize:44px;
+  $mouseButtonSize:32px;
+
+.flexslider {
+  //position:relative;
+  padding:0 0 ($touchButtonSize - 9px);
+  margin:0 0 1.25em;
+  border:none;
+  .no-touch & {
+    padding-bottom:$mouseButtonSize;}
+  .feature-description {
+    padding-bottom:.5em; }
+  .slides li {
+    padding-top:1em;
+    > a, > div {
+      display:block; } } }
+
+
+.flex-control-nav {
+  display:none; }
+
+.flex-direction-nav {
+  li {
+    a {
+      margin:0 !important;
+      width: $touchButtonSize;
+      height: $touchButtonSize;
+      display: block;
+      position: absolute;
+      cursor: pointer;
+      top:auto;
+      bottom:0;
+      text-indent: -999em;
+      background: transparent url('../img/slider-controls.svg') 0px 0px no-repeat;
+      .no-svg & {
+        background-image:  url('../img/slider-controls.png');
+      }
+      .no-touch & {
+        width:$mouseButtonSize;
+        height:$mouseButtonSize;
+        background-position:0px -6px; }
+      &:hover, &:focus {
+        background-position:0px -44px;
+        .no-touch & {
+          background-position:0px -50px; } } }
+    .next {
+      right:0;
+      background-position:28px -88px;
+      .no-touch & {
+        background-position:14px -94px; }
+      &:hover, &:focus {
+        background-position:28px -132px;
+        .no-touch & {
+          background-position:14px -138px; } } }
+    .prev {
+      left:0; } } }
+
+}
+
+
+
+
+// 300 px
+
+@mixin slider-300() {
+
+  $touchButtonSize:44px;
+  $mouseButtonSize:32px;
+
+.flex-container {
+  padding-bottom: .5em;
+}
+
+.flexslider {
+  border: none; }
+
+.flex-control-nav {
+  display:block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  li {
+    margin: 0 0 0 5px;
+    display: inline-block;
+    zoom: 1;
+    &:first-child {
+      margin: 0;
+      .touch & a {
+        background-position:28px -176px;
+        &:hover, &:focus {
+          background-position:28px -220px; } } }
+    &:last-child {
+      .touch & a {
+        background-position:0px -176px;
+        &:hover, &:focus, &.active {
+          background-position:0px -220px; } } }
+    a {
+      width: $touchButtonSize;
+      height: $touchButtonSize;
+      display: block;
+      background: transparent url('../img/slider-controls.png') 14px -176px no-repeat;
+      cursor: pointer;
+      text-indent: -999em;
+      .no-touch & {
+        width:$mouseButtonSize;
+        height:$mouseButtonSize;
+        background-position:8px -182px; }
+      &:hover, &:focus, &.active {
+        background-position:14px -220px;
+        .no-touch & {
+          background-position:8px -226px; } }
+      &.active {
+        cursor: default; } } } }
+
+
+.flex-control-nav {
+  bottom: 0;
+}
+.flex-direction-nav li {
+  a.prev {
+    left:0; }
+  a.next {
+    right:0; } }
+
+.slides li > a, .feature-description {
+  max-width:350px;
+  margin:0 auto;
+  .fullsize-images & {
+    max-width: 100%; } }
+    
+}
+
+
+
+
+
+// 450 px
+
+@mixin slider-450() {
+
+.flex-container {
+  padding-left:0;
+  padding-right:0;
+  width:100%; }
+
+.flex-direction-nav {
+  position:absolute;
+  top:138px;
+  width:94%;
+  margin-left:3%; }
+  
+.slides li > a, .feature-description {
+  .fullsize-images & {
+    width:80%; } }
+
+}
+
+
+
+
+
+// 600px
+
+@mixin slider-600() {
+
+#content .flex-container {
+    border-bottom: 4px solid #f7f7f7;
+}
+
+}
+
+
+
+
+
+// 700px
+
+@mixin slider-700() {
+
+.flex-container {
+  //border-top:1px solid $blue3;
+  padding:0;
+  #content & {
+    border-bottom: none; } }
+
+.flexslider {
+  padding-bottom:50px;
+  margin-bottom:.25em;
+  background-color: #f6f7f8;
+  border-bottom:1px solid #eee;
+  .no-touch & {
+    padding-bottom:44px;
+    margin-bottom:.75em; }
+  .slides li {
+    padding-top:0;
+    > a {
+      margin-left:0;
+      width:$image-width;
+      padding-right:(100% - $image-width);
+      &.wide {
+        width:100%;
+        padding-right:0;
+        img {
+          width:100%;
+          max-width:100%; } }
+      img {
+        width:100%;
+        max-width:100%; } } } }
+
+.feature-description, .fullsize-images .feature-description {
+  background-color: $blue10;
+  height:399px;
+  width:35%;
+  padding:0 1em 0 1.5em;
+  margin:0 !important;
+  position:absolute;
+  top:0;
+  right:0;
+  @include transition('width .5s');
+  @include border-box();
+  @include box-shadow(0px 0px 8px rgba(0,0,0,.25));
+  h2 {
+    font-size:.95em;
+    margin-bottom:0;
+    font-weight:normal; }
+  &.lightText {
+    a, a:link, a:hover, a:visited, a:active, a:focus {
+      color:$blue8; }
+    p {
+      color:rgba(255,255,255,.55); } } }
+
+.flex-direction-nav, .flex-control-nav {
+    @include border-box();
+}
+      
+.flex-direction-nav .prev, .flex-direction-nav .next, .flex-control-nav {
+	bottom: 5px; }
+.flex-direction-nav {
+  top:auto;
+  bottom: 0;
+  li {
+    .prev {
+      left:5%; }
+    .next {
+      right:5%; } } }
+
+
+.cssgradients .feature-description {
+  //@include white-radial-gradient(.55, 0);
+  border-left:1px solid rgba(255,255,255,.5); }
+
+.cssgradients .full .feature-description {
+  //@include white-radial-gradient();
+  border-left:1px solid rgba(255,255,255,.5); }
+
+
+
+.slides li.full > a {
+  width:100%;
+  padding-right:0;
+  img {
+    width:auto;
+    max-width:100%; } }
+
+.feature-description {
+  padding:0 1em 0 1.5em;
+  h2 {
+    margin-bottom:.5em;
+    .wf-active & {
+      font-size:1.5em; } }
+  p {
+    font-size:1em; } }
+
+}
+
+
+
+
+
+// 800 px
+
+@mixin slider-800() {
+
+
+.flexslider {
+  padding-bottom:0 !important;
+  .slides li > a img {
+    max-width:699px; }
+  .feature-description {
+    padding:0 1.5em 0 2em; }
+  .flex-direction-nav, .flex-control-nav {
+    width:210px;
+    position:absolute;
+    right:0;
+    padding:0 1em 0 1.5em; }
+  .flex-direction-nav li {
+    a.next {
+      right:.75em;
+      bottom: 0; }
+    a.prev {
+      left:1.25em;
+      bottom: 0; } } }
+
+.flexslider {
+  .feature-description, .flex-control-nav, .flex-direction-nav {
+    width:(100% - $image-width + 2%);
+    padding:.25em 3% 0 4%; }
+  .flex-direction-nav, .flex-control-nav {
+    padding-top:0;
+    margin-bottom:.25em;
+    bottom:.25em; } }
+
+}
+
+
+
+
+
+// 900 px
+
+@mixin slider-900() {
+
+.flexslider {
+  .feature-description, .flex-control-nav, .flex-direction-nav {
+    width:28%;
+    padding:.5em 3% 0 4%; }
+  .flex-direction-nav, .flex-control-nav {
+    padding-top:0; } }
+
+}
+
+
+
+
+
+// 940 px
+
+@mixin slider-940() {
+
+.flex-container {
+  margin:0 auto;
+  width:940px; }
+
+}
+
+
+
+
+// 1000 px
+
+@mixin slider-1000() {
+
+.flexslider {
+  .feature-description, .flex-control-nav, .flex-direction-nav {
+    width:28.28%;
+    padding:1em 3.5% 0 3.5%; }
+  .flex-direction-nav {
+    padding-top:0; } }
+
+}
+
+
+
+
+// 1040 px
+
+@mixin slider-1040() {
+
+#content {
+  width:1040px;
+  margin:0 auto;}
+
+  
+}
+
+
+
+
+// 1300 px
+
+@mixin slider-1300() {
+
+.flex-direction-nav {
+  display: none !important;
+}
+
+.flex-container {
+  margin-left:69px;
+  overflow: visible; }
+
+$imgBorder:7px;
+$navwidth:18%;
+
+.flexslider {
+    padding-right:$navwidth;
+    border-bottom: none; }
+
+#content .flex-control-nav {
+  background-color: mix($blue11, $lightgray, 65%);
+  top:0;
+  bottom:auto;
+  right:0;
+  text-indent: 0;
+  width:15.3%;
+  height:500px;
+  border-left:1px solid $grayD;
+  padding: 1em 0 0 0;
+  li {
+    margin:0; }
+  a {
+    display: block;
+    background-image: none;
+    width:70%;
+    height:auto;
+    margin:0 auto;
+    overflow: hidden;
+    position: relative;
+    padding:5px;
+    border: 1px solid transparent;
+    &.active {
+      background-color: #fff;
+      border-color: $grayC;
+      @include box-shadow(0 0 1px rgba(0,0,0,.5));
+      img, &:hover img {
+        opacity: 1; } }
+    &:hover img {
+      opacity: 1; } }
+  img {
+    @include transition(border-color .5s);
+    display: block;
+    opacity: .9; } }
+
+}
+
+
+
+
+// 1560 px
+
+@mixin slider-1560() {
+  
+}

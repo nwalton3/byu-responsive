@@ -1,0 +1,149 @@
+/* Feedback Form */
+
+
+@mixin feedback-1() {
+
+  /* jQuery.Rating Plugin CSS - http://www.fyneworks.com/jquery/star-rating/ */
+  div.star-rating{float:left;width:15px;height:15px;text-indent:-999em;cursor:pointer;display:block;background:transparent;overflow:hidden}
+  div.rating-cancel{display: none;}
+  div.star-rating,div.star-rating a{background:url("../img/star.gif") no-repeat 0 0px}
+  div.rating-cancel a,div.star-rating a{display:block;width:15px;height:100%;background-position:0 0px;border:0}
+  div.star-rating-on a{background-position:0 -15px!important}
+  div.star-rating-hover a{background-position:0 -30px}
+  /* Read Only CSS */
+  div.star-rating-readonly a{cursor:default !important}
+  /* Partial Star CSS */
+  div.star-rating{background:transparent!important;overflow:hidden !important}
+  /* END jQuery.Rating Plugin CSS */
+
+
+#rating {
+	background: #ffc;
+	padding: 2em .75em;
+	width: 100%;
+	z-index: 10000;
+	@include border-box();
+	@include box-shadow(0 0 10px rgba(0,0,0,.5));
+
+}
+
+#starlabel h4 {
+  line-height: 1.5em;
+  padding-bottom: .5em
+}
+#rating td.label {
+	color: #036;
+	font-size: 14px;
+	text-align: right;
+	font-weight: bold;
+	padding:4px 10px 0;
+}
+#feedbackTable{
+	margin:0 5px;
+}
+#starbox {
+	//width:65%;
+	vertical-align: bottom;
+	min-width:80px;
+	.star {
+  	padding-bottom: .7em; }}
+
+#starbox label {display:none}
+
+#rating td.input {
+	padding-top:5px;
+}
+
+#closebox {
+	display: block;
+	position:absolute;
+	right:20px;
+	top:1em;
+	text-align: right;
+}
+#commentlabel a {
+	display: block;
+	padding-bottom: 1em;
+}
+
+#commentbox textarea {
+	width:95%;
+	height:70px;
+}
+#emailbox p {
+	margin:5px 0;
+}
+
+
+tr#submit {position:relative;}
+
+#feedbacksubmit {
+  display: inline-block;
+  margin:.5em 0 1em;
+  background-color:$blue5;
+  color:#fff;
+  padding:.35em 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius:1em;
+  border:none;
+}
+
+
+#rating #thanksbox {
+	font-size: 13px;
+	font-weight: bold;
+	padding-top:5px;
+}
+.moreinfolink {
+	display: block;
+	font-size: 12px;
+	margin: 8px 0;
+}
+
+#rating h4 {
+	text-transform: none;
+	margin: 0;
+}
+
+#rating table,
+#rating tr,
+#rating td {
+	border:none;
+	padding:0;
+	margin:0;
+}
+
+}
+
+
+@mixin feedback-300() {
+  #starbox {
+  	min-width:100px;
+  }
+
+  #feedbacksubmit {  
+    @include background-image(linear-gradient($blue5, $blue3));
+    @include border-radius(14px);
+    @include box-shadow(0 1px 0 rgba(255, 255, 255, 0.25) inset,0 1px 8px rgba(0, 0, 0, 0.2));
+    padding:.35em 1.75em;
+  }
+}
+
+@mixin feedback-450() {
+  #rating {
+  	padding: 2.5em 1.5em;
+  }
+  #starbox {
+  	min-width:150px;
+  }
+}
+
+@mixin feedback-600() {
+  #rating {
+  	padding: 2.5em;
+  }
+  #starbox {
+  	min-width:200px;
+  }
+}
