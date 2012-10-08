@@ -7,7 +7,7 @@ sass_dir = "css-sass"
 images_dir = "img"
 javascripts_dir = "js"
 
-output_style = :compact
+output_style = :compressed
 environment = :development
 
 relative_assets = true

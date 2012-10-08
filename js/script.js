@@ -806,7 +806,6 @@ var byu_template = (function ($) {
 
 
 
-
   
   
   /* Func: ColorLuminance

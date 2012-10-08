@@ -20,8 +20,8 @@ if (isset($_COOKIE["screenwidth"])) {
 	<meta name="robots" content="index, follow" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 	
-	<link rel="stylesheet" href="css/mobile.css" />
-	<link rel="stylesheet" media="all and (min-width:1px)" href="css/style.css" />
+	<link rel="stylesheet" href="css/mobile.css?v=3" />
+	<link rel="stylesheet" media="all and (min-width:1px)" href="css/style.css?v=3" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' type='text/css'>
 	
 	<script src="js/init.min.js"></script>

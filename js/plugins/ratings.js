@@ -53,7 +53,8 @@ $(function(){
 		});
 		
 		// Add the comment fields if they're not showing yet
-		switch(star){
+		/*
+switch(star){
 			case '1':
 				text = "Yikes! Tell us what’s so terrible...";
 				break;
@@ -79,6 +80,7 @@ $(function(){
 		} else if (!comments) {
 			$('#commentlabel a').html(text);
 		}
+*/
 	});
 	
 	
@@ -89,7 +91,7 @@ $(function(){
 	
 		var initHeight = $('#rating').height();	
 	
-		$('#commentlabel').html('<label for="commentfield">Comments</label');
+		$('#commentlabel').html('<label for="commentfield">Comments</label>');
 		$('#commentbox').html('<textarea id="commentfield" name="commentfield"></textarea>');
 		$('form#rating table tbody').append('<tr id="email"><td class="label" id="emaillabel"><label for="emailfield">Email Address</label></td><td class="input" id="emailbox"><input id="emailfield" name="emailfield" type="text" /></td></tr>');
 		$('#emailbox').append('<p>Add your email if you’d like to keep up with future developments. <br />We promise not to send too much mail or give your address to anyone :)</p>');
@@ -117,12 +119,9 @@ $(function(){
 			}
 		});
 		
-		$('#rating').slideUp(250, function(){
-			$(this)
-				.find('table')
-				.html('<tr><td class="label" id="thankslabel">Thanks for the comments!</td><td class="input" id="thanksbox">Feel free to come back often and leave more feedback or check our progress! <a href="http://web.byu.edu/wiki/whats_happening_redesign" class="moreinfolink">Learn about the BYU Community website project</a><a href="http://beta.byu.edu/stats" class="moreinfolink">View live stats for this test</a></td></tr>')
-				.end().slideDown(250);
-		});
+		$('#rating')
+		  .find('table')
+			.html('<tr><td class="label" id="thankslabel">Thanks for the comments!</td></tr><tr><td class="input" id="thanksbox">Feel free to come back often and leave more feedback or check our progress! <a href="http://web.byu.edu/wiki/whats_happening_redesign" class="moreinfolink">Learn about the BYU Community website project</a><a href="http://beta.byu.edu/stats" class="moreinfolink">View live stats for this test</a></td></tr>');
 	});
 	
 	
