@@ -1,0 +1,42 @@
+@import "compass";
+
+a {
+	color: $blue4;
+	text-decoration: none;
+	p & {
+	  text-decoration: underline
+	}
+  &:hover {
+  	color: $blue1;
+  	text-decoration: underline;
+  }
+  &:active {
+  	color: #c00
+  }
+  &.visited {
+  	color: #539
+  }
+}
+
+a.button {
+	color: #fff;
+	display: block;
+	@include background(linear-gradient($blue6, #336699));
+	@include border-radius(14px);
+	@include box-shadow(0 1px 0 rgba(#fff,0.25) inset,0 1px 8px rgba(#000,0.2));
+	padding: .25em 1.5em;
+	float: left;
+	margin-right: 12px;
+	text-decoration: none;
+	font-weight: bold;
+
+  &:hover {
+    @include background(linear-gradient($blue4, $blue3));
+  }
+}
+
+@media all and (min-width:600px) {
+  a.button {
+  	padding: .25em 2em;  
+  }
+}
