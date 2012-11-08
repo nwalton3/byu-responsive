@@ -19,6 +19,7 @@ if (isset($_COOKIE["screenwidth"])) {
 	<meta name="keywords" content="brigham young, university, byu, cougars" />
 	<meta name="robots" content="index, follow" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="shortcut icon" href="http://home.byu.edu/home/sites/all/themes/homepage/favicon.ico" type="image/x-icon"/>
 	
 	<link rel="stylesheet" href="css/mobile.css?v=3" />
 	<link rel="stylesheet" media="all and (min-width:1px)" href="css/style.css?v=3" />
@@ -42,11 +43,46 @@ if (isset($_COOKIE["screenwidth"])) {
 			<a id="myBYU" href="http://home.byu.edu/home/cas" class="mybyu">myBYU</a>
 			
 			<div id="search-container">
-				<a href="search.php" class="search">Search</a>
-			</div>               
+			  <a href="search.php" class="search">Search</a>
+			  <?php if($w > 300) {
+			    include('inc/searchForm.php');
+			  } ?>
+			</div> 
+			<?php if ($w > 300) { ?>
+  		<nav id="secondary-nav">
+        <ul>
+        		<?php 
+        		include('inc/nav-s/mobile.php');
+        		include('inc/nav-s/future-students.php');
+        		include('inc/nav-s/students.php');
+        		include('inc/nav-s/faculty.php');
+        		include('inc/nav-s/staff.php');
+        		include('inc/nav-s/parents.php');
+        		include('inc/nav-s/alumni.php');
+        		?>
+        </ul>
+    </nav>
+		<?php	} ?>            
 		</div>
 		
-		<nav id="primary-nav-menu"><a href="menu.php">Menu</a></nav>
+		<?php if($w > 300) { ?>
+  		<nav id="primary-nav">
+          <ul>
+          		<?php 
+          		include('inc/nav-p/about.php');
+          		include('inc/nav-p/academics.php');
+          		include('inc/nav-p/admissions-aid.php');
+          		include('inc/nav-p/arts.php');
+          		include('inc/nav-p/athletics.php');
+          		include('inc/nav-p/campus-life.php');
+          		include('inc/nav-p/news-events.php');
+          		include('inc/nav-p/service-faith.php');
+          		?>
+          </ul>
+      </nav>  		
+		<?php } else { ?>
+		  <nav id="primary-nav-menu"><a href="menu.php">Menu</a></nav>
+		<?php } ?>
 	</header>
 	
 

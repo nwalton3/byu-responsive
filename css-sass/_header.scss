@@ -23,16 +23,16 @@
   border-bottom:1px solid $blue3;
   background-color:$blue2;
   .svg & {
-    background: transparent url('../img/bg.svg') top left no-repeat;
+    background: transparent url('../img/byu-header-bg.svg') top left no-repeat;
     @include background-size(cover); }
   h1 {
     margin:0;
     margin-left:-7px;
     text-indent: -999em;
     overflow: hidden;
-    background: transparent url('../img/logo-sm.png') 0px 0px no-repeat;
+    background: transparent url('../img/byu-logo-sm.png') 0px 0px no-repeat;
     .svg & {
-      background-image: url('../img/logo-sm.svg') } }
+      background-image: url('../img/byu-logo-sm.svg') } }
     a {
       display:block;
       margin-right:50%; } }
@@ -136,9 +136,9 @@ a.mybyu, .open #search-button {
   //@include byu-gradient(100px 20px);
   border-bottom-color: $blue4;
   h1 {
-    background-image: url('../img/logo.png');
+    background-image: url('../img/byu-logo.png');
     .svg & {
-      background-image: url('../img/logo.svg'); }
+      background-image: url('../img/byu-logo.svg'); }
     //background-position: 0px 0px;
     width:90px; } }
 
@@ -256,9 +256,9 @@ a.mybyu {
     margin:0 auto;
     background-position: .7em 5px;
     height:80px;
-    background-image:url('../img/logo-lg.png');
+    background-image:url('../img/byu-logo-lg.png');
     .svg & {
-      background-image:url('../img/logo-lg.svg'); }
+      background-image:url('../img/byu-logo-lg.svg'); }
     a {
       height: 87px;
       width: 350px; } } }

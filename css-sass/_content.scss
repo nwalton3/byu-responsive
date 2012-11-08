@@ -336,8 +336,13 @@ a.events-m {
 @mixin content-1040() {
 
 body {
-  background: #fff url('../img/body-bg.svg') top center no-repeat;
-  @include background-size(4000px 1000px); }
+  background: #fff url('../patterns/arches/arches.png') top center repeat;
+  //background: #fff url('../patterns/stitched_wool/stitched_wool.png') top center repeat;
+  //background: #fff url('../patterns/subtle_horizontal_light/shl.png') top center repeat;
+  //background: #fff url('../patterns/subtle_stripes/subtle_stripes.png') top center repeat;
+
+  //@include background-size(4000px 1000px);
+}
 
 #content {
   background-color: #fff;

@@ -14,19 +14,6 @@
   <h2><a href="http://news.byu.edu/archive12-jun-spine.aspx">'Compliant' disc</a></h2><p>This Oreo-sized flexible disc developed at BYU could banish spinal fusion surgery and bring relief to millions who suffer from a common, agonizing ailment--low back pain. <a href="http://news.byu.edu/archive12-jun-spine.aspx">Read about what two professors and a recent Ph.D. graduate are doing with the disc</a>.</p>
 </div></li>
 
-<!--
-<li>
-<a href="http://aims.byu.edu/p/foundationdocs">
-
-  <img src="img/feature/foundationdocs.med.jpg" alt="">
-
-</a>
-
-<div class="feature-description" data-bg="#bfcfdf">
-  <h2><a href="http://aims.byu.edu/p/foundationdocs">By study and by faith</a></h2><p>Brigham Young University is committed to inspired religious values and rigorous intellectual learning. Read a <a href="http://aims.byu.edu/p/foundationdocs">collection of key speeches</a> delivered at BYU that have helped shape the university&rsquo;s mission.</p>
-</div></li>
--->
-
 <li>
 <a href="http://news.byu.edu/archive12-may-novels.aspx">
 

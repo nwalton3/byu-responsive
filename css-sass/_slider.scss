@@ -67,7 +67,9 @@
   $mouseButtonSize:32px;
 
 .flexslider {
-  //position:relative;
+  @include border-radius(0);
+  @include box-shadow(none);
+  border:none;
   padding:0 0 ($touchButtonSize - 9px);
   margin:0 0 1.25em;
   border:none;
@@ -80,9 +82,10 @@
     > a, > div {
       display:block; } } }
 
-
 .flex-control-nav {
-  display:none; }
+  display:none;
+  position: absolute;
+  left:-999em; }
 
 .flex-direction-nav {
   li {
@@ -108,7 +111,7 @@
         background-position:0px -44px;
         .no-touch & {
           background-position:0px -50px; } } }
-    .next {
+    .flex-next {
       right:0;
       background-position:28px -88px;
       .no-touch & {
@@ -117,7 +120,7 @@
         background-position:28px -132px;
         .no-touch & {
           background-position:14px -138px; } } }
-    .prev {
+    .flex-prev {
       left:0; } } }
 
 }
@@ -139,10 +142,9 @@
 .flexslider {
   border: none; }
 
-.flex-control-nav {
+.flex-control-nav, .flex-control-paging {
   display:block;
   width: 100%;
-  position: absolute;
   bottom: 0;
   text-align: center;
   li {
@@ -161,6 +163,7 @@
         &:hover, &:focus, &.active {
           background-position:0px -220px; } } }
     a {
+      @include box-shadow(none);
       width: $touchButtonSize;
       height: $touchButtonSize;
       display: block;
@@ -171,21 +174,21 @@
         width:$mouseButtonSize;
         height:$mouseButtonSize;
         background-position:8px -182px; }
-      &:hover, &:focus, &.active {
-        background-position:14px -220px;
+      &:hover, &:focus, &.active, &.flex-active {
+        background:transparent url('../img/slider-controls.png') no-repeat 14px -220px;
         .no-touch & {
           background-position:8px -226px; } }
       &.active {
         cursor: default; } } } }
 
-
 .flex-control-nav {
   bottom: 0;
+  left:0;
 }
 .flex-direction-nav li {
-  a.prev {
+  a.flex-prev {
     left:0; }
-  a.next {
+  a.flex-next {
     right:0; } }
 
 .slides li > a, .feature-description {
@@ -259,6 +262,7 @@
     margin-bottom:.75em; }
   .slides li {
     padding-top:0;
+    position: relative;
     > a {
       margin-left:0;
       width:$image-width;
@@ -299,15 +303,15 @@
     @include border-box();
 }
       
-.flex-direction-nav .prev, .flex-direction-nav .next, .flex-control-nav {
+.flex-direction-nav .flex-prev, .flex-direction-nav .flex-next, .flex-control-nav, .flex-control-paging {
 	bottom: 5px; }
 .flex-direction-nav {
   top:auto;
   bottom: 0;
   li {
-    .prev {
+    .flex-prev {
       left:5%; }
-    .next {
+    .flex-next {
       right:5%; } } }
 
 
@@ -358,14 +362,17 @@
     width:210px;
     position:absolute;
     right:0;
+    left:auto;
     padding:0 1em 0 1.5em; }
   .flex-direction-nav li {
-    a.next {
+    a.flex-next {
       right:.75em;
       bottom: 0; }
-    a.prev {
+    a.flex-prev {
       left:1.25em;
-      bottom: 0; } } }
+      bottom: 0; }
+  &:hover {
+     } } }
 
 .flexslider {
   .feature-description, .flex-control-nav, .flex-direction-nav {
