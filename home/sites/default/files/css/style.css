@@ -655,7 +655,7 @@ dd {
 
   #search-container form {
     width: 160px; } }
-/* 1000 px */
+/* 800 px */
 @media all and (min-width: 800px) {
   #main-header {
     padding-top: 0; }
@@ -667,13 +667,35 @@ dd {
 
   #logo {
     width: 290px;
-    padding-top: 0;
-    padding-left: 5%; }
+    padding-top: 0; }
     #logo h1 {
       height: 85px;
       background: url('../../../all/themes/homepage/img/byu-logo-lg.png?1352418414') 16px 4px no-repeat; }
       .svg #logo h1 {
-        background-image: url('../../../all/themes/homepage/img/byu-logo-lg.svg?1352418414'); } }
+        background-image: url('../../../all/themes/homepage/img/byu-logo-lg.svg?1352418414'); }
+
+  #search-container {
+    background: transparent;
+    border-top: none;
+    border-bottom: none;
+    float: right;
+    position: absolute;
+    top: .5em;
+    right: .5em; }
+    #search-container .button {
+      position: static;
+      float: left;
+      margin-right: 1em; }
+    #search-container form {
+      width: 160px; }
+
+  #search {
+    height: 1.5em; } }
+/* 1000 px */
+@media all and (min-width: 1000px) {
+  #header-top {
+    width: 1000px;
+    margin: 0 auto; } }
 nav ul {
   list-style: none; }
 
