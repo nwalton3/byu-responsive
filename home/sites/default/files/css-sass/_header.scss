@@ -62,8 +62,9 @@
 
 
 #search-container {
-	border-top:1px solid $blue5;
-	background-color: $blue1;
+	border-top:1px solid $blue4;
+	background-color: $blue0;
+	border-bottom:1px solid $blue4;
 	padding:.5em;
 	padding-right: 5.5em;
 	.button {
@@ -171,11 +172,20 @@
 
 
 /* 1000 px */
-@media all and (min-width:1000px) {
+@media all and (min-width:800px) {
+  #main-header {
+    padding-top:0;
+    .svg & {
+      @include background-size(100% 100px);
+    }
+  }
 
   #logo {
     width:290px;
+    padding-top:0;
+    padding-left:5%;
     h1 {
+      height: 85px;
     	@include background(image-url("byu-logo-lg.png") 16px 4px no-repeat);
     	.svg & {
       	@include background-image(image-url("byu-logo-lg.svg"));
