@@ -4,6 +4,7 @@
 /* HEADER */
 
 #main-header {
+  min-width: 180px;
 	@include background(image-url('byu-header-bg.png') no-repeat scroll center top $blue1);
 	.svg & {
   	@include background-image(image-url('byu-header-bg.svg'));
@@ -104,6 +105,9 @@
 	top: 0;
 	right: .5em;
 }
+
+
+
 
 
 

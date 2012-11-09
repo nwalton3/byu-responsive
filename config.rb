@@ -2,10 +2,10 @@
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "sites/default/files/css"
-sass_dir = "sites/default/files/css-sass"
-images_dir = "sites/all/themes/homepage/img"
-javascripts_dir = "sites/default/files/js"
+css_dir = "home/sites/default/files/css"
+sass_dir = "home/sites/default/files/css-sass"
+images_dir = "home/sites/all/themes/homepage/img"
+javascripts_dir = "home/sites/default/files/js"
 
 output_style = :nested
 environment = :development
