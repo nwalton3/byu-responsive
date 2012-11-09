@@ -1,6 +1,8 @@
 @import "compass";
 
 
+
+
 nav ul {
 	list-style: none;
 }
@@ -16,6 +18,22 @@ nav li .sub {
 .boxshadow nav li .sub {
 	border: 0;
 }
+
+/*
+#primary-nav .links {
+	width: 93%;
+}
+
+.wrapper,#primary-nav ul {
+	margin: 0 auto;
+	padding: 0 32px;
+}
+#primary-nav ul ul {
+	width: auto;
+	margin: 0;
+	padding: 0;
+}
+
 #secondary-nav {
 	position: absolute;
 	bottom: 6px;
@@ -282,19 +300,170 @@ html.ie8 #primary-nav .links .featured a {
 	width: 200px;
 }
 
+*/
 
 
+
+
+
+/* Side slide nav */
+
+html {
+  background: $blue2;
+}
+
+body {
+  @include transition(left 0.2s ease);
+  position: relative;
+  left:0;
+}
+
+body.sideNav {
+  left: 75%;
+  #main-header, #content, footer {
+    @include box-shadow( -5px 0px 5px $blue0);
+  }
+}
+
+
+
+
+
+/* Menu button */
+
+.box-shadow-menu {
+  position: absolute;
+  width: 1.75em;
+  height: 1.5em;
+  padding: .5em;
+  bottom:.35em;
+  left:1em;
+  @include border-radius(3px);
+  border:1px solid $blue2;
+  text-indent: -999em;
+  overflow: hidden;
+  display: none;
+  &:hover {
+    background-color: $blue2;
+    border-color: $blue3;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: .6em;
+    width: 1.5em;
+    margin-left:-.75em;
+    height: 0.2em;
+    background: #fff;
+    @include border-radius(1px);
+    @include box-shadow(0 0.6em 0 0 #fff, 0 1.1em 0 0 #fff);
+  }
+  
+}
+
+
+/* Primary nav */
+#primary-nav {
+  width: 75%;
+  position: absolute;
+  top:0;
+  right: 100%;
+  font-size: 1.2em;
+  a {
+    color: #fff;
+    padding: .65em 1em;
+    display: block;
+    &:hover {
+      text-decoration: none;
+      background-color: $blue0;
+    }
+  }
+  > ul {
+    padding: 1em 0 0;
+    background: $blue2;
+    border-right: 1px solid $blue3;
+    body.sideNav & {
+      @include box-shadow(inset -5px 3px 10px $blue0);      
+    }
+  }
+
+  li {
+    display: block;
+    float:none;
+    padding:0;
+    border-bottom: 1px solid $blue1;
+    border-top: 1px solid $blue3;
+    overflow: hidden;
+    &.left, &.right {
+      padding: 0;
+    }
+    &.hover {
+      background-color: $blue0;
+      .mega {
+        max-height: 1500px;
+      }
+    }
+  }
+
+  .highlight, .featured, hr {
+    display: none;
+  }
+
+  .mega {
+    max-height:0px;
+    @include transition(max-height 0.2s ease);
+    background-color:$blue1;
+    margin: 0;
+    position: relative;
+    a {
+      color: #eee;
+      padding-left:1.75em;
+      border-top: 1px solid $blue2;
+      border-bottom: 1px solid $blue0;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      border: none;
+    }
+  }
+}
 
 
 
 
 #secondary-nav {
   display: none;
+  ul {
+    padding: 0;
+  }
 }
 
+
+@media all and (min-width:275px) {
+  .box-shadow-menu {
+    display: block;
+  }
+
+}
+
+
 @media all and (min-width:750px) {
+  .box-shadow-menu {
+    display: none;
+  }
   #secondary-nav {
     display: block;
   }
+  body.sideNav {
+    left: 0;
+  }
 }
+
+
+
+
 

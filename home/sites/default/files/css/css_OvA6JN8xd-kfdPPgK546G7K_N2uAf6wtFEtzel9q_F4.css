@@ -98,6 +98,7 @@ td.revision-current {
 	float: left;
 	clear: left;
 }
+/*
 #secondary-nav .sub,#primary-nav .sub {
 	background-color: #fff;
 	display: none;
@@ -281,6 +282,7 @@ html.ie8 #primary-nav .links .featured a {
 html.ie7 #primary-nav .links .featured a {
 	font-size: 13px;
 }
+*/
 #permissions td.module {
 	font-weight: bold;
 }

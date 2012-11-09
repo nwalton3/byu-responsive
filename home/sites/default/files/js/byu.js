@@ -34,43 +34,50 @@ var byu_template = (function ($) {
     }
 
     function activateMenus() {
-        $('nav li:has(.mega, .sub) > a').click(function (e) {
-            e.preventDefault();
-            var li = $(this).parent();
-            // Only close menu if user clicked to open it
-            if (li.hasClass('hover') && clickOpened) {
-                li.removeClass('hover');
-            }
-            else {
-                li.addClass('hover');
-                $('nav li').not(li).removeClass('hover');
-                clickOpened = true;
-            }
-            return false;
-        });
+      
+      // Activate the side navigation
+      $('#secondary-nav').before('<a href="#" class="box-shadow-menu">Menu</a>');
+      $('#header-top').delegate('.box-shadow-menu', 'click', function() {
+        $('body').toggleClass('sideNav');
+      });
+        
+      $('nav li:has(.mega, .sub) > a').click(function (e) {
+          e.preventDefault();
+          var li = $(this).parent();
+          // Only close menu if user clicked to open it
+          if (li.hasClass('hover') && clickOpened) {
+              li.removeClass('hover');
+          }
+          else {
+              li.addClass('hover');
+              $('nav li').not(li).removeClass('hover');
+              clickOpened = true;
+          }
+          return false;
+      });
 
-        $('nav li:has(.mega, .sub)').click(function (e) {
-            e.stopPropagation();
-        });
+      $('nav li:has(.mega, .sub)').click(function (e) {
+          e.stopPropagation();
+      });
 
-        // Menu config
-        var byuMenuConfig = {
-            sensitivity: 10,
-            interval: 75,
-            over: rollOver, // function = onMouseOver callback (REQUIRED)    
-            timeout: 350, // number = milliseconds delay before onMouseOut    
-            out: rollOut // function = onMouseOut callback (REQUIRED)    
-        };
-        $('#secondary-nav > ul > li, #primary-nav > ul > li').hoverIntent(byuMenuConfig);
-        $('nav.no-js').removeClass('no-js');
+      // Menu config
+      var byuMenuConfig = {
+          sensitivity: 10,
+          interval: 75,
+          over: rollOver, // function = onMouseOver callback (REQUIRED)    
+          timeout: 350, // number = milliseconds delay before onMouseOut    
+          out: rollOut // function = onMouseOut callback (REQUIRED)    
+      };
+      //$('#secondary-nav > ul > li, #primary-nav > ul > li').hoverIntent(byuMenuConfig);
+      $('nav.no-js').removeClass('no-js');
 
-        /* Positions menu divs */
-        $('nav li .sub').each(function () {
-            var mega = $(this);
-            var left = mega.parent().position().left;
-            if (left > mega.parent().parent().outerWidth() - mega.outerWidth())
-                mega.css('right', 0);
-        });
+      /* Positions menu divs */
+      $('nav li .sub').each(function () {
+          var mega = $(this);
+          var left = mega.parent().position().left;
+          if (left > mega.parent().parent().outerWidth() - mega.outerWidth())
+              mega.css('right', 0);
+      });
     }
 
     /* Func: RollOver
