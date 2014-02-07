@@ -1,9 +1,12 @@
 byu-responsive
 ==============
 
-Responsive web site for byu.edu
+**Note:** This is an early test for the responsive byu.edu web site
 
-The beta site can be viewed at [beta.byu.edu](http://beta.byu.edu/m)
+The current development on the BYU web site and templates can be found at:
+[github.com/byuweb/HTML-Templates](https://github.com/byuweb/HTML-Templates)
+
+
 
 ## Dependencies
 
