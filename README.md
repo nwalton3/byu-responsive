@@ -6,7 +6,7 @@ byu-responsive
 The current development on the BYU web site and templates can be found at:
 [github.com/byuweb/HTML-Templates](https://github.com/byuweb/HTML-Templates)
 
-
+==============
 
 ## Dependencies
 
