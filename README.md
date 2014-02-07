@@ -3,7 +3,7 @@ byu-responsive
 
 **Note:** This is an early test for the responsive byu.edu web site
 
-## The current development on the BYU web site and templates can be found at [github.com/byuweb/HTML-Templates](https://github.com/byuweb/HTML-Templates)
+## Current development at [github.com/byuweb/HTML-Templates](https://github.com/byuweb/HTML-Templates)
 
 ==============
 ## Dependencies
